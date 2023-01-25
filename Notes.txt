@@ -1,0 +1,63 @@
+Sending and updating Outlook Calendar’s appointments and meeting requests
+https://www.add-in-express.com/creating-addins-blog/2015/01/16/outlook-calendar-appointments-meeting-requests/#sending-meeting-request
+
+NOTE: Release COM objects. Check the end of the article
+
+https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples
+
+If you need to see MAPI properties (and their DASL names) not explicitly exposed by Outlook, take a look at the appointment with OutlookSpy (I am its author, click IMessage button).
+https://stackoverflow.com/questions/73353611/create-meeting-with-allow-new-time-proposal-disabled
+
+One (not working!!!) propertysetter example
+Identify a Meeting Item as a Counter-Proposal to a Prior Meeting Request
+https://learn.microsoft.com/en-us/office/vba/outlook/how-to/navigation/identify-a-meeting-item-as-a-counter-proposal-to-a-prior-meeting-request
+
+PidLidAppointmentNotAllowPropose Canonical Property
+https://learn.microsoft.com/en-us/office/client-developer/outlook/mapi/pidlidappointmentnotallowpropose-canonical-property
+
+Commonly used property sets
+https://learn.microsoft.com/en-us/office/client-developer/outlook/mapi/commonly-used-property-sets
+
+Good article about how to create schemas and namespaces for properties
+Referencing Properties by Namespace
+https://learn.microsoft.com/en-us/office/vba/outlook/how-to/navigation/referencing-properties-by-namespace
+
+
+
+https://learn.microsoft.com/en-us/office/vba/api/outlook.olpermission
+https://learn.microsoft.com/en-us/office/vba/api/outlook.sharingitem.permission
+
+Customize the built-in Outlook Select Names dialog (or any other)
+https://www.codeproject.com/Articles/21288/Customize-the-built-in-Outlook-Select-Names-dialog
+
+Creating Meeting Request 
+MeetingItem object (Outlook)
+https://learn.microsoft.com/en-us/office/vba/api/outlook.meetingitem
+
+OlMeetingRecipientType enumeration (Outlook)
+https://learn.microsoft.com/en-us/office/vba/api/outlook.olmeetingrecipienttype
+
+SelectNamesDialog.Recipients property (Outlook)
+https://learn.microsoft.com/en-us/office/vba/api/outlook.selectnamesdialog.recipients
+
+Display Names from the Address Book
+https://learn.microsoft.com/en-us/office/vba/outlook/Concepts/Address-Book/display-names-from-the-address-book
+
+NameSpace.GetSelectNamesDialog method (Outlook)
+https://learn.microsoft.com/en-us/office/vba/api/outlook.namespace.getselectnamesdialog
+
+SelectNamesDialog Interface
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.outlook.selectnamesdialog?redirectedfrom=MSDN&view=outlook-pia
+
+
+Very Nice Example Series !!!
+
+Import appointment XML data into Outlook appointment objects
+https://learn.microsoft.com/en-us/office/client-developer/outlook/pia/how-to-import-appointment-xml-data-into-outlook-appointment-objects
+
+
+The root of that SDK
+
+Developing managed Outlook add-ins using the Outlook PIA
+https://learn.microsoft.com/en-us/office/client-developer/outlook/pia/developing-managed-outlook-add-ins-using-the-outlook-pia
+
