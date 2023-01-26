@@ -250,7 +250,7 @@ namespace MeetingCreator.Forms
                     Requireds.Add(addr);
 
                 foreach (var addr in tbOptional.Text.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries))
-                    Requireds.Add(addr);
+                    Optionals.Add(addr);
 
                 snd = _ns.GetSelectNamesDialog();
                 snd.AllowMultipleSelection = true;
