@@ -284,8 +284,11 @@ namespace MeetingCreator.Forms
 
                 if (!snd.Recipients.ResolveAll())
                     MessageBox.Show("Not all recipients are resolved");
-
+                
                 snd.Display();
+                
+                // If the form is not brought to front then the active window in the Z-order becomes the Outlook App itself
+                this.BringToFront();
 
                 if (snd.Recipients.Count == 0)
                     return;
