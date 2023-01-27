@@ -190,10 +190,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.8.1"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    "Name" = "8:Microsoft .NET Framework 4.8.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.8.1"
                     }
                 }
             }
@@ -631,7 +631,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MeetingCreator"
         "ProductCode" = "8:{289B6198-3FA8-488D-93C4-3373028B820A}"
-        "PackageCode" = "8:{1EC44F3E-ED98-428F-8B91-EB94C9182795}"
+        "PackageCode" = "8:{EA235D31-3BCA-4825-8BBB-5C971FE8A052}"
         "UpgradeCode" = "8:{47C40397-7828-45BB-AF7A-1EE0B0A4E7B9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1240,7 +1240,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AD7AD6FA3C834AB3A06F054C5AD486F9"
             {
-            "SourcePath" = "8:..\\MeetingCreator\\obj\\x64\\Release\\MeetingCreator.dll"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3F0995F5D5C04B8093A0BB5F3F60C177"
