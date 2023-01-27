@@ -1,5 +1,7 @@
-﻿using Microsoft.Office.Tools.Ribbon;
-
+﻿using Microsoft.Office.Interop.Outlook;
+using Microsoft.Office.Tools.Outlook;
+using Microsoft.Office.Tools.Ribbon;
+using System.Windows.Forms;
 namespace MeetingCreator
 {
     public partial class rbnIrgMtng
@@ -12,7 +14,8 @@ namespace MeetingCreator
         private void btnMeeting_Click(object sender, RibbonControlEventArgs e)
         {
             Forms.frmMeetingBase frm = new Forms.frmMeetingBase();
-            frm.Show();          
+            frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            frm.Show();            
         }
     }
 }
