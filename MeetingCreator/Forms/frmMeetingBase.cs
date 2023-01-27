@@ -14,12 +14,9 @@ namespace MeetingCreator.Forms
                 
         private Outlook.NameSpace _ns;
         private List<string> Requireds = new List<string>();
-        private List<string> Optionals = new List<string>();
-        private List<DateTime> MeetingDatesandStartTimes = null;
-        private List<DateTime> MeetingDatesandEndTimes = null;
+        private List<string> Optionals = new List<string>();        
         private bool ToggleStartEnd = false;
-
-                
+                        
         public frmMeetingBase()
         {
             InitializeComponent();            
@@ -122,7 +119,22 @@ namespace MeetingCreator.Forms
         {
             int i = MeetingDateAndTime.IndexOf(MeetingParameters.MeetingHours[0]);
             return MeetingDateAndTime.Substring(0, i);
+        }
 
+        private MeetingTimes ExtractMeetingTimes(string MeetingDateAndTime)
+        {
+            MeetingTimes mt = new MeetingTimes();
+            var d = ExtractMeetingDate(MeetingDateAndTime);
+            var t1 = MeetingDateAndTime.IndexOf(MeetingParameters.MeetingHours[0], 0) + MeetingParameters.MeetingHours[0].Length;
+            var t2 = MeetingDateAndTime.IndexOf(MeetingParameters.MeetingHours[1], 0);
+
+            var d1 = d + " " + MeetingDateAndTime.Substring(t1, t2 - t1);
+            var d2 = d + " " + MeetingDateAndTime.Substring(t2 + MeetingParameters.MeetingHours[1].Length);
+            
+            mt.StartTime = DateTime.Parse(d1);
+            mt.EndTime = DateTime.Parse(d2);
+            
+            return mt;
         }
 
         private bool AreMeetingTimesValid()
@@ -136,14 +148,13 @@ namespace MeetingCreator.Forms
                 return true;
         }
 
-        private List<DateTime> PopulateMeetingDateandTimes(string tmMeeting)
+        private List<MeetingTimes> PopulateMeetingDateandTimes()
         {
-            List<DateTime> dtMeetings = new List<DateTime>();
+            List<MeetingTimes> dtMeetings = new List<MeetingTimes>();
 
-            foreach(ListViewItem liv in lvDates.Items)
-                dtMeetings.Add(DateTime.Parse(ExtractMeetingDate(liv.Text) + " " + tmMeeting));
+            foreach (ListViewItem liv in lvDates.Items)
+                dtMeetings.Add(ExtractMeetingTimes(liv.Text));
             
-
             return dtMeetings;
         }
 
@@ -339,20 +350,20 @@ namespace MeetingCreator.Forms
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            MeetingDatesandStartTimes = PopulateMeetingDateandTimes(cmbStart.Text);
-            MeetingDatesandEndTimes = PopulateMeetingDateandTimes(cmbEnd.Text);
             Outlook.AppointmentItem ai = null;
-            int i;
-
+            List<MeetingTimes> meetingDateTimes = PopulateMeetingDateandTimes();            
+            
             try
             {
-                for (i = 0; i != MeetingDatesandStartTimes.Count; i++)
-                {
-                    ai = BuildMeeting(MeetingDatesandStartTimes[i], MeetingDatesandEndTimes[i]);
+               
+                foreach(MeetingTimes mt in meetingDateTimes)
+                {                    
+                    ai = BuildMeeting(mt.StartTime, mt.EndTime);
                     ai.Send();
                     Marshal.ReleaseComObject(ai);
                 }
 
+                var i = meetingDateTimes.Count;
                 string str = i < 2 ? $"{i} meeting request has been sent" : $"{i} meeting requests have been sent";
 
                 MessageBox.Show( this, str, "Meeting requests send status", MessageBoxButtons.OK, MessageBoxIcon.Information);

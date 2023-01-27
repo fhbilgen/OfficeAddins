@@ -61,3 +61,10 @@ The root of that SDK
 Developing managed Outlook add-ins using the Outlook PIA
 https://learn.microsoft.com/en-us/office/client-developer/outlook/pia/developing-managed-outlook-add-ins-using-the-outlook-pia
 
+
+
+SETUP
+
+https://stackoverflow.com/questions/9172970/deploying-installing-an-outlook-addin
+https://learn.microsoft.com/en-us/visualstudio/vsto/deploying-a-vsto-solution-by-using-windows-installer?view=vs-2022
+https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ff937654(v=msdn.10)?redirectedfrom=MSDN
